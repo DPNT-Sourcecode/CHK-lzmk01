@@ -32,18 +32,32 @@ def calculatePrice(item,qty,ppu):
     else:
         return qty*ppu
 
+def seperateItems(sku):
+    items = []
+    p=0
+    for i,l in enumerate(sku):
+        validItem = (getPrice(l) != 0)
+        validNumber = (sku[p:(i)]).isnumeric()
+
+        if(l.isalpha()):
+            if(validItem and validNumber):
+                items.append(sku[p:(i+1)])
+                p = i+1
+            else: p = i
+        
+        return items
+
+
 
 def checkout(skus):
-    print('=====')
-    print(skus)
     if(skus):
         lengthOfSku = len(skus)
-        item = skus[-1]
-        itemPrice = getPrice(item)
-
-        if(itemPrice == 0):
+    
+        if(lengthOfSku == 0):
             return -1
 
+        price = 0
+        items = seperateItems(skus)
         if(lengthOfSku == 1):
             return itemPrice
         elif(lengthOfSku > 1):
@@ -53,3 +67,4 @@ def checkout(skus):
             else: return -1
     
     return 0
+
