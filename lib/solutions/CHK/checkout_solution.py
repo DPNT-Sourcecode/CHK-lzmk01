@@ -101,20 +101,18 @@ def checkout(skus):
         if(len(items) == 0):
             return -1
 
-        for item in items:
+        for item in items: 
             itm = item[-1]
-            itemPrice = getPrice(itm)
-            if(len(item)==1):
-                itemPrice = getPrice(item)
-                price+=itemPrice
-            else: 
-                price += calculate(item)
-
-            if(itm == 'E'):
+            if(itm == 'E' and int(item[0:-1])>2):
                 for it in items:
                     im = it[-1]
                     if(im == 'B'):
-                        price-=30
-                        
+                        frac,mult = math.modf(int(item[0:-1])/2)
+                        if(mult>=int(it[0:-1])):
+                            price-= (int(it[0:-1])*30)
+                        else:
+                            price-= ((mult)*30)
+
         return price
     return 0
+
