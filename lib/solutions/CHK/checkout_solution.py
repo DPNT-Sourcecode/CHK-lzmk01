@@ -49,8 +49,3 @@ def checkout(skus):
             qty = skus[0:-1]
             return price * qty
     raise NotImplementedError()
-
-
-
-
-
