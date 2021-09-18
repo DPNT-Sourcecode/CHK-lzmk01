@@ -5,6 +5,7 @@ import math
 # skus = unicode string
 
 def checkout(skus):
+    print(skus)
     lengthOfSku = len(skus)
     item = skus[-1]
     itemPrice = getPrice(item)
@@ -49,6 +50,7 @@ def calculatePrice(item,qty,ppu):
             return price
     else:
         return qty*ppu
+
 
 
 
