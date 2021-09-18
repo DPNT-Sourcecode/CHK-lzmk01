@@ -52,6 +52,3 @@ def calculatePrice(item,qty,ppu):
 
 
 
-
-
-
