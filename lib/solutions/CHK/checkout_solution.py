@@ -71,8 +71,11 @@ def seperateItems(sku):
     if(len(items) > 0):
         val = Counter(items)
         for k,v in val.items():
-            uniq.append(str(v)+str(k))
-           
+            if(int(v) > 1):
+                uniq.append(str(v)+str(k))
+            else:
+                uniq.append(str(k))
+
         items = uniq
     
     return items
@@ -120,6 +123,7 @@ def checkout(skus):
                             price -= calculatePrice('B',(mult),30)
         return price
     return 0
+
 
 
 
