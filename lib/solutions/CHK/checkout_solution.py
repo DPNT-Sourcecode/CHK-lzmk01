@@ -109,6 +109,13 @@ def checkout(skus):
                 price+=itemPrice
             else: 
                 price += calculate(item)
-        
+
+            if(itm == 'E'):
+                for it in items:
+                    im = it[-1]
+                    if(im == 'B'):
+                        price-=30
+                        
         return price
     return 0
+
