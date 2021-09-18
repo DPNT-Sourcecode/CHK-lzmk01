@@ -27,10 +27,14 @@ def calculatePrice(item,qty,ppu):
         if(qty >= 3):
             price = calPriceWithPromo(item,qty,3,ppu,130)
             return price
+        else:
+            return qty*ppu
     elif(item == 'B'):
         if(qty >= 2):
             price = calPriceWithPromo(item,qty,2,ppu,45)
             return price
+        else:
+            return qty*ppu
     else:
         return qty*ppu
 
@@ -88,9 +92,9 @@ def checkout(skus):
                 itemPrice = getPrice(item)
                 price+=itemPrice
             else: 
-                itemPrice = getPrice(itm)
                 price += calculate(item)
         
         return price
     return 0
+
 
