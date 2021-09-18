@@ -2,6 +2,24 @@ import math
 # noinspection PyUnusedLocal
 # skus = unicode string
 
+def checkout(skus):
+    lengthOfSku = len(skus)
+    item = skus[lengthOfSku-1]
+    itemPrice = getPrice(item)
+
+    if(itemPrice == 0):
+        return -1
+
+    if(lengthOfSku == 1):
+        return itemPrice
+    elif(lengthOfSku > 1):
+        qty = skus[0:-1]
+        if(qty.isnumeric()):
+            return calculatePrice(item,int(qty),itemPrice)
+        else: return -1
+    
+    return -1
+
 def getPrice(item):
     switcher =  {
         "A": 50,
@@ -31,21 +49,3 @@ def calculatePrice(item,qty,ppu):
         return qty*ppu
 
 
-
-def checkout(skus):
-    lengthOfSku = len(skus)
-    item = skus[lengthOfSku-1]
-    itemPrice = getPrice(item)
-
-    if(itemPrice == 0):
-        return -1
-
-    if(lengthOfSku == 1):
-        return itemPrice
-    elif(lengthOfSku > 1):
-        qty = skus[0:-1]
-        if(qty.isnumeric()):
-            return calculatePrice(item,int(qty),itemPrice)
-        else: return -1
-    
-    return -1
