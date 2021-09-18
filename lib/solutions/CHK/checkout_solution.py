@@ -18,8 +18,12 @@ def checkout(skus):
 
     if(lengthOfSku == 1):
         price = getPrice(skus)
-        return price
+        if(price == 0):
+            return -1
+        else:
+            return price
     elif(lengthOfSku > 1):
         price = getPrice(skus[lengthOfSku - 1])
     raise NotImplementedError()
+
 
