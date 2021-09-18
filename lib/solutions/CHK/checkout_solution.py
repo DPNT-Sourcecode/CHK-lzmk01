@@ -48,3 +48,5 @@ def checkout(skus):
         if(qty.isnumeric()):
             return calculatePrice(item,int(qty),itemPrice)
         else: return -1
+    
+    return -1
