@@ -41,13 +41,10 @@ def seperateItems(sku):
             return []
 
     for i,l in enumerate(sku):
-        validItem = (getPrice(l) != 0)
-
         if(l.isalpha()):
-            if(validItem):
-                items.append(sku[p:(i+1)])
-                p = i+1        
-        return items
+            items.append(sku[p:(i+1)])
+            p = i+1
+    return items
 
 def calculate(item):
     itm = item[-1]
@@ -82,5 +79,6 @@ def checkout(skus):
         
         return price
     return 0
+
 
 
