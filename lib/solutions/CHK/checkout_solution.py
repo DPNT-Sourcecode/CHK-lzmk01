@@ -52,8 +52,4 @@ def checkout(skus):
                 return calculatePrice(item,int(qty),itemPrice)
             else: return -1
     
-    return -1
-
-
-
-
+    return 0
