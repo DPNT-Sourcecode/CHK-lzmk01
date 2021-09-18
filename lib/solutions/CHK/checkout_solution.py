@@ -47,7 +47,13 @@ def seperateItems(sku):
         
         return items
 
-
+def calculate(item):
+    itm = item[-1]
+    qty = item[0:-1]
+    itemPrice = getPrice(itm)
+    if(qty.isnumeric()):
+        return calculatePrice(itm,int(qty),itemPrice)
+    else: return 0
 
 def checkout(skus):
     if(skus):
@@ -58,13 +64,21 @@ def checkout(skus):
 
         price = 0
         items = seperateItems(skus)
-        if(lengthOfSku == 1):
-            return itemPrice
-        elif(lengthOfSku > 1):
-            qty = skus[0:-1]
-            if(qty.isnumeric()):
-                return calculatePrice(item,int(qty),itemPrice)
-            else: return -1
-    
-    return 0
+
+        if(len(items) == 0):
+            return -1
+
+        for item in items:
+            itm = item[-1]
+            itemPrice = getPrice(itm)
+            if(len(item)==1):
+                itemPrice = getPrice(item)
+                price+=itemPrice
+            else: 
+                itemPrice = getPrice(itm)
+                price += calculate(item)
+        
+        return price
+    return -1
+
 
