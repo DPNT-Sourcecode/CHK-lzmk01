@@ -48,7 +48,6 @@ def calculatePrice(item,qty,ppu):
     elif(item == 'E'):
         if(qty >= 2):
             price = qty*ppu
-            price += calculatePrice('B',1,30)
             return price
         else:
             return qty*ppu
@@ -113,5 +112,6 @@ def checkout(skus):
         
         return price
     return 0
+
 
 
