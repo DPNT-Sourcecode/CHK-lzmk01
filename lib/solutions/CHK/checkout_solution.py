@@ -1,6 +1,8 @@
 
 
 import math
+from collections import Counter
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 
@@ -44,6 +46,18 @@ def seperateItems(sku):
         if(l.isalpha()):
             items.append(sku[p:(i+1)])
             p = i+1
+    
+    uniq = []
+    if(len(items) > 0):
+        val = Counter(items)
+        for k,v in val.items():
+            if(int(v) > 1):
+                uniq.append(str(v)+str(k))
+            else:
+                uniq.append(str(k))
+
+        items = uniq
+    
     return items
 
 def calculate(item):
@@ -79,3 +93,4 @@ def checkout(skus):
         
         return price
     return 0
+
