@@ -1,5 +1,4 @@
 import math
-
 # noinspection PyUnusedLocal
 # skus = unicode string
 
