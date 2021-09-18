@@ -124,6 +124,3 @@ def checkout(skus):
 
         return price
     return 0
-
-
-
