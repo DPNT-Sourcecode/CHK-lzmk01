@@ -120,4 +120,3 @@ def checkout(skus):
                             price -= calculatePrice('B',(mult),30)
         return price
     return 0
-
