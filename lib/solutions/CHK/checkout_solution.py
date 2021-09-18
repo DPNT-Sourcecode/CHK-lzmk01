@@ -24,7 +24,16 @@ def calPriceWithPromo(item,qty,promoQty,ppu,promoPrice):
 
 def calculatePrice(item,qty,ppu):
     if(item == 'A'):
-        if(qty >= 3):
+        if((qty >= 5)):
+            if((qty%5)<3):
+                price = calPriceWithPromo(item,qty,5,ppu,200)
+                return price
+            else:
+                frac,mult = math.modf(qty/5)
+                price = calPriceWithPromo(item,(mult*5),5,ppu,200)
+                price += calculatePrice(item,qty%5,ppu)
+                return price
+        elif(qty >= 3):
             price = calPriceWithPromo(item,qty,3,ppu,130)
             return price
         else:
@@ -32,6 +41,13 @@ def calculatePrice(item,qty,ppu):
     elif(item == 'B'):
         if(qty >= 2):
             price = calPriceWithPromo(item,qty,2,ppu,45)
+            return price
+        else:
+            return qty*ppu
+    elif(item == 'E'):
+        if(qty >= 2):
+            price = qty*ppu
+            price += calculatePrice('B',1,30)
             return price
         else:
             return qty*ppu
@@ -96,3 +112,4 @@ def checkout(skus):
         
         return price
     return 0
+
