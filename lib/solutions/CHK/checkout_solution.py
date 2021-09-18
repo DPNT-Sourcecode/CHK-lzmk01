@@ -35,6 +35,11 @@ def calculatePrice(item,qty,ppu):
 def seperateItems(sku):
     items = []
     p=0
+    for i in sku:
+        validAlpha = i.isalpha() and (getPrice(i) != 0)
+        if(not validAlpha and not i.isnumeric()):
+            return []
+
     for i,l in enumerate(sku):
         validItem = (getPrice(l) != 0)
 
@@ -77,4 +82,5 @@ def checkout(skus):
         
         return price
     return 0
+
 
