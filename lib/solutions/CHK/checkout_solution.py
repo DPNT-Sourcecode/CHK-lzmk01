@@ -6,10 +6,10 @@ import math
 
 def checkout(skus):
     lengthOfSku = len(skus)
-    item = skus[lengthOfSku-1]
+    item = skus[-1]
     itemPrice = getPrice(item)
 
-    if(itemPrice == 0):
+    if(lengthOfSku == 0):
         return -1
 
     if(lengthOfSku == 1):
@@ -49,6 +49,7 @@ def calculatePrice(item,qty,ppu):
             return price
     else:
         return qty*ppu
+
 
 
 
