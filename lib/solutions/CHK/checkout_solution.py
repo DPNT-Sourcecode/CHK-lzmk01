@@ -12,7 +12,8 @@ def getPrice(item):
         "B": 30,
         "C": 20,
         "D": 15,
-        "E": 40
+        "E": 40,
+        'F': 10
     }
     return switcher.get(item,0)
 
@@ -132,3 +133,4 @@ def checkout(skus):
                                 price -= calculatePrice('B',(mult),30)
         return price
     return 0
+
