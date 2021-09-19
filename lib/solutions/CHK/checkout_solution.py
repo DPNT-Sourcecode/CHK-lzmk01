@@ -116,7 +116,9 @@ def checkout(skus):
                         frac,mult = math.modf(int(item[0:-1])/2)
                         if(int(it[0:-1]) == 2):
                            price -= calculatePrice('B',(int(it[0:-1])),30)
-                           price += 30
+                           price+=mult*30
+                           if(mult > 1):
+                               price-=mult*30
                         else:
                             if(mult>=int(it[0:-1])):
                                 price -= calculatePrice('B',(int(it[0:-1])),30)
@@ -124,3 +126,4 @@ def checkout(skus):
                                 price -= calculatePrice('B',(mult),30)
         return price
     return 0
+
