@@ -54,7 +54,7 @@ def calculatePrice(item,qty,ppu):
             return qty*ppu
     elif(item == 'F'):
         if(qty>=3):
-            frac,freeCount = math.modf(qty/2)
+            frac,freeCount = math.modf(qty/3)
             return (qty-freeCount)*ppu
         else:
             return qty*ppu
@@ -133,4 +133,5 @@ def checkout(skus):
                                 price -= calculatePrice('B',(mult),30)
         return price
     return 0
+
 
