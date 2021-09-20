@@ -127,7 +127,7 @@ def checkout(skus):
     
         if(lengthOfSku == 0):
             return -1
-            
+
         price = 0
         items = seperateItems(skus)
 
@@ -135,8 +135,8 @@ def checkout(skus):
             return -1
 
         for item in items:
-            itm = item[-1]
-            itemPrice = getPrice(itm)
+            storeItem = item[-1]
+            itemPrice = getPrice(storeItem)
             if(len(item)==1):
                 itemPrice = getPrice(item)
                 price+=itemPrice
@@ -162,3 +162,4 @@ def checkout(skus):
                                 price -= calculatePrice('B',(mult),30)
         return price
     return 0
+
