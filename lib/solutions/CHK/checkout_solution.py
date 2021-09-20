@@ -14,7 +14,7 @@ STORE_ITEM = [
     SuperMarketStockItem('E',40,True,[],[]),
     SuperMarketStockItem('F',10,True,[],[]),
     SuperMarketStockItem('G',20,True,[],[]),
-    SuperMarketStockItem('H',10,True,[5,10],[45,80]),
+    SuperMarketStockItem('H',10,True,[45,10],[5,10]),
     SuperMarketStockItem('I',35,True,[],[]),
     SuperMarketStockItem('J',60,True,[],[]),
     SuperMarketStockItem('K',80,True,[150],[2]),
@@ -23,16 +23,16 @@ STORE_ITEM = [
     SuperMarketStockItem('N',40,True,[],[]),        
     SuperMarketStockItem('0',10,True,[],[]),
     SuperMarketStockItem('P',50,True,[5],[100]),
-    SuperMarketStockItem('Q',30,True,[130,200],[3,5]),
-    SuperMarketStockItem('R',50,True,[130,200],[3,5]),
-    SuperMarketStockItem('S',30,True,[130,200],[3,5]),
-    SuperMarketStockItem('T',20,True,[130,200],[3,5]),
-    SuperMarketStockItem('U',40,True,[130,200],[3,5]),
-    SuperMarketStockItem('V',50,True,[130,200],[3,5]),
-    SuperMarketStockItem('W',20,True,[130,200],[3,5]),
-    SuperMarketStockItem('X',90,True,[130,200],[3,5]),
-    SuperMarketStockItem('Y',10,True,[130,200],[3,5]),
-    SuperMarketStockItem('Z',50,True,[130,200],[3,5]),
+    SuperMarketStockItem('Q',30,True,[80],[3]),
+    SuperMarketStockItem('R',50,True,[],[]),
+    SuperMarketStockItem('S',30,True,[],[]),
+    SuperMarketStockItem('T',20,True,[],[]),
+    SuperMarketStockItem('U',40,True,[],[]),
+    SuperMarketStockItem('V',50,True,[2,3],[90,130]),
+    SuperMarketStockItem('W',20,True,[],[]),
+    SuperMarketStockItem('X',90,True,[],[]),
+    SuperMarketStockItem('Y',10,True,[],[]),
+    SuperMarketStockItem('Z',50,True,[],[]),
 ]
 def getPrice(item):
     switcher =  {
@@ -161,5 +161,6 @@ def checkout(skus):
                                 price -= calculatePrice('B',(mult),30)
         return price
     return 0
+
 
 
