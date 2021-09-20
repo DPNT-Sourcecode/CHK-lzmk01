@@ -13,8 +13,8 @@ SuperMarketStockItem =  namedtuple(
 # skus = unicode string
 
 STORE_ITEM = [
-    SuperMarketStockItem('A',50,True,[130,200],[3,5],''),
-    SuperMarketStockItem('B',30,True,[45],[2],''),
+    SuperMarketStockItem('A',50,True,False,[130,200],[3,5],''),
+    SuperMarketStockItem('B',30,True,False,[45],[2],''),
     SuperMarketStockItem('C',20,False,False,[],[],''),
     SuperMarketStockItem('D',15,False,False,[],[],''),
     SuperMarketStockItem('E',40,False,True,[],[2],'1B'),
@@ -171,4 +171,5 @@ def checkout(skus):
                                 price -= calculatePrice('B',(mult),30)
         return price
     return 0
+
 
