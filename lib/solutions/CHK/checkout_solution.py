@@ -14,7 +14,7 @@ STORE_ITEM = [
     SuperMarketStockItem('E',40,False,True,[],[2],'1B'),
     SuperMarketStockItem('F',10,False,True,[],[2],'1F'),
     SuperMarketStockItem('G',20,False,False,[],[],''),
-    SuperMarketStockItem('H',10,True,[45,10],[5,10],''),
+    SuperMarketStockItem('H',10,True,False,[45,10],[5,10],''),
     SuperMarketStockItem('I',35,False,False,[],[],''),
     SuperMarketStockItem('J',60,False,False,[],[],''),
     SuperMarketStockItem('K',80,True,False,[150],[2],''),
@@ -34,6 +34,7 @@ STORE_ITEM = [
     SuperMarketStockItem('Y',10,False,False,[],[],''),
     SuperMarketStockItem('Z',50,False,False,[],[],''),
 ]
+
 def getPrice(item):
     switcher =  {
         "A": 50,
@@ -126,7 +127,7 @@ def checkout(skus):
     
         if(lengthOfSku == 0):
             return -1
-
+            
         price = 0
         items = seperateItems(skus)
 
@@ -161,7 +162,3 @@ def checkout(skus):
                                 price -= calculatePrice('B',(mult),30)
         return price
     return 0
-
-
-
-
