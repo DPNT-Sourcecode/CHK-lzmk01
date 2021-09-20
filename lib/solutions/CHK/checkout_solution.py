@@ -2,10 +2,38 @@
 
 import math
 from collections import Counter
-
+from itemsModel import SuperMarketStockItem, BasketItem
 # noinspection PyUnusedLocal
 # skus = unicode string
 
+STORE_ITEM = [
+    SuperMarketStockItem('A',50,True,[130,200],[3,5]),
+    SuperMarketStockItem('B',30,True,[45],[2]),
+    SuperMarketStockItem('C',20,True,[],[]),
+    SuperMarketStockItem('D',15,True,[],[]),
+    SuperMarketStockItem('E',40,True,[130,200],[3,5]),
+    SuperMarketStockItem('F',10,True,[130,200],[3,5]),
+    SuperMarketStockItem('G',20,True,[130,200],[3,5]),
+    SuperMarketStockItem('H',10,True,[130,200],[3,5]),
+    SuperMarketStockItem('I',35,True,[130,200],[3,5]),
+    SuperMarketStockItem('J',60,True,[130,200],[3,5]),
+    SuperMarketStockItem('K',80,True,[130,200],[3,5]),
+    SuperMarketStockItem('L',90,True,[130,200],[3,5]),
+    SuperMarketStockItem('M',15,True,[130,200],[3,5]),
+    SuperMarketStockItem('N',40,True,[130,200],[3,5]),        
+    SuperMarketStockItem('0',10,True,[130,200],[3,5]),
+    SuperMarketStockItem('P',50,True,[130,200],[3,5]),
+    SuperMarketStockItem('Q',30,True,[130,200],[3,5]),
+    SuperMarketStockItem('R',50,True,[130,200],[3,5]),
+    SuperMarketStockItem('S',30,True,[130,200],[3,5]),
+    SuperMarketStockItem('T',20,True,[130,200],[3,5]),
+    SuperMarketStockItem('U',40,True,[130,200],[3,5]),
+    SuperMarketStockItem('V',50,True,[130,200],[3,5]),
+    SuperMarketStockItem('W',20,True,[130,200],[3,5]),
+    SuperMarketStockItem('X',90,True,[130,200],[3,5]),
+    SuperMarketStockItem('Y',10,True,[130,200],[3,5]),
+    SuperMarketStockItem('Z',50,True,[130,200],[3,5]),
+]
 def getPrice(item):
     switcher =  {
         "A": 50,
@@ -133,3 +161,4 @@ def checkout(skus):
                                 price -= calculatePrice('B',(mult),30)
         return price
     return 0
+
