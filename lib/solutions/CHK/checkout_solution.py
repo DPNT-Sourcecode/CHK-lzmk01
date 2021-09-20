@@ -7,32 +7,32 @@ from itemsModel import SuperMarketStockItem, BasketItem
 # skus = unicode string
 
 STORE_ITEM = [
-    SuperMarketStockItem('A',50,True,[130,200],[3,5]),
-    SuperMarketStockItem('B',30,True,[45],[2]),
-    SuperMarketStockItem('C',20,False,[],[]),
-    SuperMarketStockItem('D',15,False,[],[]),
-    SuperMarketStockItem('E',40,False,[],[]),
-    SuperMarketStockItem('F',10,False,[],[]),
-    SuperMarketStockItem('G',20,False,[],[]),
-    SuperMarketStockItem('H',10,True,[45,10],[5,10]),
-    SuperMarketStockItem('I',35,False,[],[]),
-    SuperMarketStockItem('J',60,False,[],[]),
-    SuperMarketStockItem('K',80,True,[150],[2]),
-    SuperMarketStockItem('L',90,False,[],[]),
-    SuperMarketStockItem('M',15,False,[],[]),
-    SuperMarketStockItem('N',40,False,[],[]),        
-    SuperMarketStockItem('0',10,False,[],[]),
-    SuperMarketStockItem('P',50,True,[5],[100]),
-    SuperMarketStockItem('Q',30,True,[80],[3]),
-    SuperMarketStockItem('R',50,False,[],[]),
-    SuperMarketStockItem('S',30,False,[],[]),
-    SuperMarketStockItem('T',20,False,[],[]),
-    SuperMarketStockItem('U',40,False,[],[]),
-    SuperMarketStockItem('V',50,True,[2,3],[90,130]),
-    SuperMarketStockItem('W',20,False,[],[]),
-    SuperMarketStockItem('X',90,False,[],[]),
-    SuperMarketStockItem('Y',10,False,[],[]),
-    SuperMarketStockItem('Z',50,False,[],[]),
+    SuperMarketStockItem('A',50,True,[130,200],[3,5],''),
+    SuperMarketStockItem('B',30,True,[45],[2],''),
+    SuperMarketStockItem('C',20,False,False,[],[],''),
+    SuperMarketStockItem('D',15,False,False,[],[],''),
+    SuperMarketStockItem('E',40,False,True,[],[2],'1B'),
+    SuperMarketStockItem('F',10,False,True,[],[2],'1F'),
+    SuperMarketStockItem('G',20,False,False,[],[],''),
+    SuperMarketStockItem('H',10,True,[45,10],[5,10],''),
+    SuperMarketStockItem('I',35,False,False,[],[],''),
+    SuperMarketStockItem('J',60,False,False,[],[],''),
+    SuperMarketStockItem('K',80,True,False,[150],[2],''),
+    SuperMarketStockItem('L',90,False,False,[],[],''),
+    SuperMarketStockItem('M',15,False,False,[],[],''),
+    SuperMarketStockItem('N',40,False,True,[],[3],'1M'),        
+    SuperMarketStockItem('0',10,False,False,[],[],''),
+    SuperMarketStockItem('P',50,True,False,[5],[100],''),
+    SuperMarketStockItem('Q',30,True,False,[80],[3],''),
+    SuperMarketStockItem('R',50,False,True,[],[3],'1Q'),
+    SuperMarketStockItem('S',30,False,False,[],[],''),
+    SuperMarketStockItem('T',20,False,False,[],[],''),
+    SuperMarketStockItem('U',40,False,True,[],[3],'1U'),
+    SuperMarketStockItem('V',50,True,False,[2,3],[90,130],''),
+    SuperMarketStockItem('W',20,False,False,[],[],''),
+    SuperMarketStockItem('X',90,False,False,[],[],''),
+    SuperMarketStockItem('Y',10,False,False,[],[],''),
+    SuperMarketStockItem('Z',50,False,False,[],[],''),
 ]
 def getPrice(item):
     switcher =  {
@@ -161,6 +161,7 @@ def checkout(skus):
                                 price -= calculatePrice('B',(mult),30)
         return price
     return 0
+
 
 
 
