@@ -1,8 +1,14 @@
-
-
 import math
 from collections import Counter
-from itemsModel import SuperMarketStockItem, BasketItem
+#from itemsModel import SuperMarketStockItem, BasketItem
+from collections import namedtuple
+
+BasketItem= namedtuple("Item",["basketSku"])
+
+SuperMarketStockItem =  namedtuple(
+    "StockItem", ["ItemName","ItemPrice","AsActiveDiscount","AsSpecialDscount","DiscountPrice","DiscountQuantity","SpecialDscountName"]
+)
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 
@@ -35,7 +41,10 @@ STORE_ITEM = [
     SuperMarketStockItem('Z',50,False,False,[],[],''),
 ]
 
-def getPrice(item):
+def getPrice(storeItem):
+    for item in STORE_ITEM:
+        return item[storeItem]
+
     switcher =  {
         "A": 50,
         "B": 30,
@@ -44,7 +53,7 @@ def getPrice(item):
         "E": 40,
         'F': 10
     }
-    return switcher.get(item,0)
+    return switcher.get(storeItem,0)
 
 def calPriceWithPromo(item,qty,promoQty,ppu,promoPrice):
     frac,mult = math.modf(qty/promoQty)
@@ -162,3 +171,4 @@ def checkout(skus):
                                 price -= calculatePrice('B',(mult),30)
         return price
     return 0
+
